@@ -10,7 +10,7 @@ public class Primes {
             }
         }
         System.out.println("Prime numbers up to " + n + ":");
-        for (int i = 0; i < isNotPrime.length; i++){
+        for (int i = 2; i < isNotPrime.length; i++){
             if (!isNotPrime[i]) {
                 System.out.println(i);
                 primeCounter++;
