@@ -22,7 +22,7 @@ public class MyString {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (c >= 'A' && c <= 'Z') {
-                res_str += (c + 32);
+                res_str += (char) (c + 32);
              } else {
                 res_str += c;
              }
@@ -32,7 +32,19 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        return false;
+        if (str1.length() < str2.length()) {
+            return false;
+        }
+        int startingIndex = str1.indexOf(str2.charAt(0));
+        if (startingIndex == -1) {
+            return false;
+        }
+        String str1_inexed = str1.substring(startingIndex);
+        for (int i = 0; i < str2.length(); i ++) {
+            if (str1_inexed.charAt(i) != str2.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
