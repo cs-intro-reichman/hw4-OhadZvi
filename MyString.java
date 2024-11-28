@@ -35,13 +35,16 @@ public class MyString {
         if (str1.length() < str2.length()) {
             return false;
         }
+        if (str2.length() == 0) {
+            return true;
+        }
         int startingIndex = str1.indexOf(str2.charAt(0));
         if (startingIndex == -1) {
             return false;
         }
-        String str1_inexed = str1.substring(startingIndex);
+        String str1_indexed = str1.substring(startingIndex);
         for (int i = 0; i < str2.length(); i ++) {
-            if (str1_inexed.charAt(i) != str2.charAt(i)) {
+            if (str1_indexed.charAt(i) != str2.charAt(i)) {
                 return false;
             }
         }
